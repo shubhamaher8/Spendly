@@ -3,6 +3,7 @@ package com.expensetracker.controller;
 import com.expensetracker.dto.*;
 import com.expensetracker.entity.TransactionType;
 import com.expensetracker.service.TransactionService;
+import jakarta.validation.Valid;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -37,7 +38,7 @@ public class TransactionController {
 
     // Create a new transaction
     @PostMapping
-    public ResponseEntity<?> createTransaction(@RequestBody TransactionRequest request) {
+    public ResponseEntity<?> createTransaction(@Valid @RequestBody TransactionRequest request) {
         try {
             TransactionResponse response = transactionService.createTransaction(request);
             return ResponseEntity.ok(response);
@@ -49,7 +50,7 @@ public class TransactionController {
     // Update a transaction
     @PutMapping("/{id}")
     public ResponseEntity<?> updateTransaction(@PathVariable Long id,
-                                               @RequestBody TransactionRequest request) {
+                                               @Valid @RequestBody TransactionRequest request) {
         try {
             TransactionResponse response = transactionService.updateTransaction(id, request);
             return ResponseEntity.ok(response);

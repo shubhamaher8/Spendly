@@ -2,6 +2,7 @@ package com.expensetracker.controller;
 
 import com.expensetracker.dto.*;
 import com.expensetracker.service.CategoryService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,7 +27,7 @@ public class CategoryController {
 
     // Create a new category
     @PostMapping
-    public ResponseEntity<?> createCategory(@RequestBody CategoryRequest request) {
+    public ResponseEntity<?> createCategory(@Valid @RequestBody CategoryRequest request) {
         try {
             CategoryResponse response = categoryService.createCategory(request);
             return ResponseEntity.ok(response);
