@@ -82,7 +82,7 @@ Spendly is a full-stack personal finance application built with Spring Boot and 
 ## 🏗️ System Architecture
 
 ```mermaid
-graph LR
+graph TD
   subgraph Frontend["🖥️ Frontend — React + Vite"]
     UI["Pages & Components"]
     CTX["AuthContext"]
@@ -112,27 +112,14 @@ graph LR
 ## 🔄 System Flow
 
 ```mermaid
-sequenceDiagram
-    actor User
-    participant React as React Frontend
-    participant Axios as Axios Interceptor
-    participant Filter as JWT Filter
-    participant Controller as REST Controller
-    participant Service as Service Layer
-    participant DB as MySQL
-
-    User->>React: Interacts with UI
-    React->>Axios: API call
-    Axios->>Axios: Attach Bearer token
-    Axios->>Filter: HTTP Request
-    Filter->>Filter: Validate JWT
-    Filter->>Controller: Authenticated request
-    Controller->>Service: Business logic
-    Service->>DB: Query / Update
-    DB-->>Service: Result
-    Service-->>Controller: Response DTO
-    Controller-->>React: JSON Response
-    React-->>User: Updated UI
+graph TD
+  A["👤 User"] --> B["🖥️ React UI"]
+  B --> C["📡 API Request + JWT Token"]
+  C --> D["🔒 Auth Check"]
+  D --> E["⚙️ Process Request"]
+  E --> F["🗄️ Database"]
+  F --> G["📦 Send Response"]
+  G --> B
 ```
 
 ---
