@@ -1,7 +1,7 @@
 # Backend
 backend/target/
 backend/*.iml
-backend/src/main/resources/application.properties
+backend/.env
 
 # Frontend
 frontend/node_modules/
