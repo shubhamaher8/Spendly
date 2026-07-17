@@ -336,7 +336,10 @@ select option {
 
 .auth-card {
   width: 100%;
-  max-width: 400px;
+  max-width: 464px;
+  background: var(--surface-raised);
+  border: 1px solid var(--border);
+  padding: 32px;
 }
 
 .auth-logo {
