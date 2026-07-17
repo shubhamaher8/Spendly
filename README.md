@@ -5,9 +5,9 @@
 
 ## 🚀 Deployment
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://expense-management-steel-nine.vercel.app/)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://spendly.vercel.app/)
 
-[![Live Project](https://img.shields.io/badge/Live%20Project-expense--management--steel--nine.vercel.app-green?style=for-the-badge&logo=vercel)](https://expense-management-steel-nine.vercel.app/)
+[![Live Project](https://img.shields.io/badge/Live%20Project-spendly.vercel.app-green?style=for-the-badge&logo=vercel)](https://spendly.vercel.app/)
 
 
 
@@ -195,13 +195,13 @@ erDiagram
 
 2. **Create the database**
    ```bash
-   mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS expensetracker;"
+   mysql -u root -p -e "CREATE DATABASE IF NOT EXISTS spendly;"
    ```
 
 3. **Configure environment**
    ```properties
    # backend/src/main/resources/application.properties
-   spring.datasource.url=jdbc:mysql://localhost:3306/expensetracker
+   spring.datasource.url=jdbc:mysql://localhost:3306/spendly
    spring.datasource.username=root
    spring.datasource.password=your_password
    jwt.secret=your_secure_secret_key
@@ -241,7 +241,7 @@ npm run build
 ```
 Spendly/
 ├── backend/
-│   ├── src/main/java/com/expensetracker/
+│   ├── src/main/java/com/spendly/
 │   │   ├── controller/       # REST API endpoints
 │   │   ├── service/          # Business logic
 │   │   ├── repository/       # Database queries

@@ -11,7 +11,7 @@
         <relativePath/>
     </parent>
 
-    <groupId>com.expensetracker</groupId>
+    <groupId>com.spendly</groupId>
     <artifactId>spendly</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>spendly</name>
