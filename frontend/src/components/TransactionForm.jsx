@@ -61,10 +61,10 @@ export default function TransactionForm({ categories, onSaved, editingTransactio
           <input
             type="number"
             name="amount"
-            placeholder="0.00"
+            placeholder="0"
             value={form.amount}
             onChange={handleChange}
-            step="0.01"
+            inputMode="numeric"
             required
           />
         </div>
