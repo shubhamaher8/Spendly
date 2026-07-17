@@ -189,8 +189,8 @@ erDiagram
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/shubhamaher8/Expense-Management.git
-   cd Expense-Management
+   git clone https://github.com/shubhamaher8/Spendly.git
+   cd Spendly
    ```
 
 2. **Create the database**
@@ -239,7 +239,7 @@ npm run build
 ## 📁 Project Structure
 
 ```
-Expense-Management/
+Spendly/
 ├── backend/
 │   ├── src/main/java/com/expensetracker/
 │   │   ├── controller/       # REST API endpoints

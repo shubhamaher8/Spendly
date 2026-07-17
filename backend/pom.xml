@@ -12,10 +12,10 @@
     </parent>
 
     <groupId>com.expensetracker</groupId>
-    <artifactId>expense-tracker</artifactId>
+    <artifactId>spendly</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>expense-tracker</name>
-    <description>Expense Tracker Backend</description>
+    <name>spendly</name>
+    <description>Spendly Backend</description>
 
     <properties>
         <java.version>17</java.version>
