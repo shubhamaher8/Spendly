@@ -29,7 +29,7 @@ export default function Login() {
   return (
     <div className="auth-page">
       <div className="auth-card">
-        <div className="auth-logo">Expense Tracker</div>
+        <div className="auth-logo">Spendly</div>
         <p className="auth-tagline">Sign in to your account</p>
 
         {error && <div className="error-message">{error}</div>}

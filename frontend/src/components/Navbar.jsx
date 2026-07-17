@@ -38,7 +38,7 @@ export default function Navbar() {
           color: 'var(--ink)',
           textDecoration: 'none'
         }}>
-          Expense Tracker
+          Spendly
         </Link>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
