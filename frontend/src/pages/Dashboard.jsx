@@ -58,7 +58,7 @@ export default function Dashboard() {
 
   return (
     <div className="page">
-      <div className="flex justify-between items-center mb-8">
+      <div className="flex justify-between items-center mb-8 dashboard-header">
         <div className="page-header" style={{ marginBottom: 0 }}>
           <h1 className="page-title">Dashboard</h1>
           <p className="page-subtitle">Monthly overview</p>

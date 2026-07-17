@@ -119,20 +119,20 @@ export default function Transactions() {
 
           {transactions.map((t) => (
             <div key={t.id} className="table-row" style={{ gridTemplateColumns: '100px 90px 1fr 100px 120px 80px' }}>
-              <div style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--ink-muted)' }}>
+              <div data-label="Date" style={{ fontFamily: 'var(--font-mono)', fontSize: 13, color: 'var(--ink-muted)' }}>
                 {t.date}
               </div>
-              <div>
+              <div data-label="Type">
                 <span className={`badge badge-${t.type === 'INCOME' ? 'income' : 'expense'}`}>
                   <span className={`dot dot-${t.type === 'INCOME' ? 'green' : 'red'}`} />
                   {t.type === 'INCOME' ? 'Income' : 'Expense'}
                 </span>
               </div>
-              <div style={{ fontSize: 13 }}>{t.categoryName}</div>
-              <div style={{ fontSize: 13, color: 'var(--ink-muted)' }} className="truncate">
+              <div data-label="Category" style={{ fontSize: 13 }}>{t.categoryName}</div>
+              <div data-label="Description" style={{ fontSize: 13, color: 'var(--ink-muted)' }} className="truncate">
                 {t.description || '—'}
               </div>
-              <div className={`amount ${t.type === 'INCOME' ? 'amount-positive' : 'amount-negative'}`}>
+              <div data-label="Amount" className={`amount ${t.type === 'INCOME' ? 'amount-positive' : 'amount-negative'}`}>
                 {t.type === 'INCOME' ? '+' : '−'} Rs. {Number(t.amount).toLocaleString('en-IN', { minimumFractionDigits: 2 })}
               </div>
               <div className="flex gap-2" style={{ justifyContent: 'center' }}>

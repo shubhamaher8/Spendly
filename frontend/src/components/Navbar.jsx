@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
@@ -5,6 +6,7 @@ export default function Navbar() {
   const { user, logout } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
+  const [mobileOpen, setMobileOpen] = useState(false);
 
   const handleLogout = () => {
     logout();
@@ -12,6 +14,8 @@ export default function Navbar() {
   };
 
   const isActive = (path) => location.pathname === path;
+
+  const closeMobile = () => setMobileOpen(false);
 
   return (
     <nav style={{
@@ -41,34 +45,55 @@ export default function Navbar() {
           Spendly
         </Link>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: 32 }}>
+        <div className="navbar-links">
           <div style={{ display: 'flex', gap: 24 }}>
             <NavLink to="/dashboard" label="Dashboard" active={isActive('/dashboard')} />
             <NavLink to="/transactions" label="Transactions" active={isActive('/transactions')} />
             <NavLink to="/categories" label="Categories" active={isActive('/categories')} />
           </div>
-
-          <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-            <div style={{
-              width: 28,
-              height: 28,
-              borderRadius: '50%',
-              background: 'var(--ink)',
-              color: '#fff',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              fontSize: 12,
-              fontWeight: 600
-            }}>
-              {user?.name?.charAt(0).toUpperCase()}
-            </div>
-            <span style={{ fontSize: 13, color: 'var(--ink-muted)' }}>{user?.name}</span>
-            <button onClick={handleLogout} className="text-action" style={{ marginLeft: 4 }}>
-              Log out
-            </button>
-          </div>
         </div>
+
+        <div className="navbar-user" style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+          <div style={{
+            width: 28,
+            height: 28,
+            borderRadius: '50%',
+            background: 'var(--ink)',
+            color: '#fff',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: 12,
+            fontWeight: 600
+          }}>
+            {user?.name?.charAt(0).toUpperCase()}
+          </div>
+          <span className="span-name" style={{ fontSize: 13, color: 'var(--ink-muted)' }}>{user?.name}</span>
+          <button onClick={handleLogout} className="text-action span-name" style={{ marginLeft: 4 }}>
+            Log out
+          </button>
+        </div>
+
+        <button
+          className="navbar-hamburger"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label="Toggle menu"
+        >
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5">
+            {mobileOpen ? (
+              <path d="M5 5l10 10M15 5L5 15" />
+            ) : (
+              <path d="M3 5h14M3 10h14M3 15h14" />
+            )}
+          </svg>
+        </button>
+      </div>
+
+      <div className={`navbar-mobile-menu ${mobileOpen ? 'open' : ''}`}>
+        <Link to="/dashboard" onClick={closeMobile}>Dashboard</Link>
+        <Link to="/transactions" onClick={closeMobile}>Transactions</Link>
+        <Link to="/categories" onClick={closeMobile}>Categories</Link>
+        <button onClick={() => { handleLogout(); closeMobile(); }}>Log out</button>
       </div>
     </nav>
   );

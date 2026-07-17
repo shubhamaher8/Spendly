@@ -504,3 +504,239 @@ select option {
 .font-mono { font-family: var(--font-mono); }
 .font-medium { font-weight: 500; }
 .truncate { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+/* Responsive: Tablet (≤ 768px) */
+@media (max-width: 768px) {
+  .page {
+    padding: 32px 20px;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .summary-amount {
+    font-size: 22px;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .form-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .form-row .form-field {
+    flex: 1 1 100% !important;
+    min-width: 0 !important;
+  }
+
+  .filter-bar select {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .inline-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table-header {
+    display: none !important;
+  }
+
+  .table-row {
+    display: flex !important;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    padding: 16px;
+    border: 1px solid var(--border);
+    margin-bottom: 8px;
+    border-radius: 0;
+    background: var(--surface-raised);
+  }
+
+  .table-row > div {
+    flex: 1 1 auto;
+  }
+
+  .table-row .amount {
+    text-align: left;
+  }
+
+  .table-row > div:not(.flex) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .table-row > div:not(.flex)::before {
+    content: attr(data-label);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-muted);
+    min-width: 70px;
+    flex-shrink: 0;
+  }
+
+  .table-row .flex.gap-2 {
+    flex: 1 1 100%;
+    justify-content: flex-end;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+
+  .auth-card {
+    max-width: 100%;
+  }
+}
+
+/* Responsive: Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .page {
+    padding: 24px 16px;
+  }
+
+  .page-title {
+    font-size: 20px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .summary-card {
+    padding: 16px;
+  }
+
+  .summary-amount {
+    font-size: 20px;
+  }
+
+  .pagination {
+    flex-wrap: wrap;
+  }
+
+  .pagination button {
+    min-width: 36px;
+    padding: 8px 10px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Navbar mobile menu */
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  color: var(--ink);
+}
+
+.navbar-mobile-menu {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-user .span-name {
+    display: none;
+  }
+
+  .navbar-hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navbar-mobile-menu {
+    display: block;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--surface-raised);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 20px;
+    z-index: 49;
+  }
+
+  .navbar-mobile-menu.open {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .navbar-mobile-menu a,
+  .navbar-mobile-menu button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 12px 0;
+    font-size: 14px;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border);
+    background: none;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    cursor: pointer;
+    font-family: var(--font-body);
+  }
+
+  .navbar-mobile-menu a:last-child,
+  .navbar-mobile-menu button:last-child {
+    border-bottom: none;
+  }
+
+  .navbar-mobile-menu a:hover,
+  .navbar-mobile-menu button:hover {
+    color: var(--accent);
+  }
+}
+
+/* Dashboard header responsive */
+@media (max-width: 640px) {
+  .dashboard-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 16px;
+  }
+
+  .dashboard-header .flex.gap-3 {
+    width: 100%;
+  }
+
+  .dashboard-header select {
+    flex: 1;
+    min-width: 0 !important;
+  }
+}
