@@ -5,9 +5,9 @@
 
 ## 🚀 Deployment
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://spendly.vercel.app/)
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://spendly-six-flame.vercel.app)
 
-[![Live Project](https://img.shields.io/badge/Live%20Project-spendly.vercel.app-green?style=for-the-badge&logo=vercel)](https://spendly.vercel.app/)
+[![Live Project](https://img.shields.io/badge/Live%20Project-spendly--six--flame.vercel.app-green?style=for-the-badge&logo=vercel)](https://spendly-six-flame.vercel.app)
 
 
 
