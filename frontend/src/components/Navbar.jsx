@@ -90,10 +90,20 @@ export default function Navbar() {
       </div>
 
       <div className={`navbar-mobile-menu ${mobileOpen ? 'open' : ''}`}>
+        <div className="mobile-user-info">
+          <div className="mobile-user-details">
+            <div className="mobile-user-avatar">
+              {user?.name?.charAt(0).toUpperCase()}
+            </div>
+            <span className="mobile-user-name">{user?.name}</span>
+          </div>
+          <button className="mobile-logout-btn" onClick={() => { handleLogout(); closeMobile(); }}>
+            Log out
+          </button>
+        </div>
         <Link to="/dashboard" onClick={closeMobile}>Dashboard</Link>
         <Link to="/transactions" onClick={closeMobile}>Transactions</Link>
         <Link to="/categories" onClick={closeMobile}>Categories</Link>
-        <button onClick={() => { handleLogout(); closeMobile(); }}>Log out</button>
       </div>
     </nav>
   );

@@ -679,8 +679,8 @@ select option {
     display: none;
   }
 
-  .navbar-user .span-name {
-    display: none;
+  .navbar-user {
+    display: none !important;
   }
 
   .navbar-hamburger {
@@ -690,25 +690,72 @@ select option {
   }
 
   .navbar-mobile-menu {
-    display: block;
-    position: absolute;
-    top: 56px;
-    left: 0;
-    right: 0;
+    display: none;
+    flex-direction: column;
     background: var(--surface-raised);
     border-bottom: 1px solid var(--border);
-    padding: 16px 20px;
-    z-index: 49;
+    padding: 0 20px;
+    overflow: hidden;
   }
 
   .navbar-mobile-menu.open {
     display: flex;
-    flex-direction: column;
-    gap: 0;
+    padding: 8px 20px 16px;
+  }
+
+  /* Mobile menu user info header */
+  .mobile-user-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 4px;
+  }
+
+  .mobile-user-info .mobile-user-details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .mobile-user-info .mobile-user-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--ink);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 600;
+    flex-shrink: 0;
+  }
+
+  .mobile-user-info .mobile-user-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--ink);
+  }
+
+  .mobile-user-info .mobile-logout-btn {
+    background: none;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--ink-muted);
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: color 0.15s ease;
+  }
+
+  .mobile-user-info .mobile-logout-btn:hover {
+    color: var(--red);
   }
 
   .navbar-mobile-menu a,
-  .navbar-mobile-menu button {
+  .navbar-mobile-menu > button {
     display: block;
     width: 100%;
     text-align: left;
@@ -726,12 +773,12 @@ select option {
   }
 
   .navbar-mobile-menu a:last-child,
-  .navbar-mobile-menu button:last-child {
+  .navbar-mobile-menu > button:last-child {
     border-bottom: none;
   }
 
   .navbar-mobile-menu a:hover,
-  .navbar-mobile-menu button:hover {
+  .navbar-mobile-menu > button:hover {
     color: var(--accent);
   }
 }
