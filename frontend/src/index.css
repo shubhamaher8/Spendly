@@ -438,6 +438,14 @@ select option {
   min-height: 300px;
 }
 
+/* Remove square focus outline on chart SVGs (mobile tap fix) */
+.recharts-surface:focus,
+.recharts-surface path:focus,
+svg:focus,
+svg path:focus {
+  outline: none;
+}
+
 /* Pagination */
 .pagination {
   display: flex;
