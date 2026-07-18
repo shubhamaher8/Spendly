@@ -30,29 +30,10 @@ const CustomTooltip = ({ active, payload, label }) => {
   return null;
 };
 
-const renderActiveShape = (props) => {
-  const { cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill } = props;
-  return (
-    <g>
-      <path
-        d={`M ${cx},${cy}
-            L ${cx + outerRadius * 1.05 * Math.cos(startAngle)}
-              ${cy + outerRadius * 1.05 * Math.sin(startAngle)}
-            A ${outerRadius * 1.05} ${outerRadius * 1.05} 0 1 1
-              ${cx + outerRadius * 1.05 * Math.cos(endAngle)}
-              ${cy + outerRadius * 1.05 * Math.sin(endAngle)} Z`}
-        fill={fill}
-        opacity={0.9}
-      />
-    </g>
-  );
-};
-
 export default function Dashboard() {
   const [summary, setSummary] = useState(null);
   const [month, setMonth] = useState(new Date().getMonth() + 1);
   const [year, setYear] = useState(new Date().getFullYear());
-  const [activeIndex, setActiveIndex] = useState(null);
 
   useEffect(() => {
     fetchSummary();
@@ -163,11 +144,6 @@ export default function Dashboard() {
                     outerRadius={85}
                     paddingAngle={2}
                     strokeWidth={0}
-                    activeIndex={activeIndex}
-                    activeShape={renderActiveShape}
-                    onMouseEnter={(_, index) => setActiveIndex(index)}
-                    onMouseLeave={() => setActiveIndex(null)}
-                    onClick={(_, index) => setActiveIndex(activeIndex === index ? null : index)}
                   >
                     {summary.categoryBreakdown.map((_, index) => (
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
