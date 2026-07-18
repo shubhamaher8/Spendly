@@ -144,6 +144,7 @@ export default function Dashboard() {
                     outerRadius={85}
                     paddingAngle={2}
                     strokeWidth={0}
+                    activeIndex={-1}
                   >
                     {summary.categoryBreakdown.map((_, index) => (
                       <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />

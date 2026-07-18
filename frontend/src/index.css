@@ -438,6 +438,15 @@ select option {
   min-height: 300px;
 }
 
+/* Remove default focus outline on charts */
+.recharts-wrapper,
+.recharts-surface,
+.recharts-sector,
+.recharts-layer,
+.recharts-wrapper * {
+  outline: none !important;
+}
+
 /* Pagination */
 .pagination {
   display: flex;
