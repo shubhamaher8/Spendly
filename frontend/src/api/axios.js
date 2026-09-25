@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://spendly-production-96c2.up.railway.app/api'
+  baseURL: 'https://spendly-backend-5223.onrender.com/api'
 });
 
 // Request interceptor - attach JWT token to every request
