@@ -241,6 +241,7 @@ npm run build
 ```
 Spendly/
 ├── backend/
+│   ├── Dockerfile            # Multi-stage build (Maven → Alpine JRE)
 │   ├── src/main/java/com/spendly/
 │   │   ├── controller/       # REST API endpoints
 │   │   ├── service/          # Business logic
